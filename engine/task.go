@@ -2,7 +2,7 @@
 * @Author: scottxiong
 * @Date:   2019-12-26 22:49:46
 * @Last Modified by:   scottxiong
-* @Last Modified time: 2019-12-27 00:50:41
+* @Last Modified time: 2019-12-27 01:15:33
  */
 package engine
 
@@ -14,13 +14,15 @@ import (
 func genPages() {
 	cmd.AddQuestion("page", "your page(default with store): ", "Please input correct page name: ", "^[a-zA-Z]+")
 	answers := cmd.Exec()
-	option := cmd.AddTask("your close", 7, " simple", " with store")
+	option := cmd.AddTask("which kind of page do you want?", 6, " simple", " with store", " store with loadable")
 	switch option {
 	case "1":
 		p_task1()
 	//anycode here ...
 	case "2":
 		p_task2()
+	case "3":
+		p_task3()
 	default:
 		p_task2()
 	}
@@ -29,12 +31,42 @@ func genPages() {
 
 func genComponents() {
 	cmd.AddQuestion("common_component", "your component name: ", "Please input correct component name: ", "^[a-zA-Z]+")
+	answers := cmd.Exec()
+	option := cmd.AddTask("which kind of component do you want?", 6, " simple", " with store", " store with loadable")
+	switch option {
+	case "1":
+		c_task1()
+	//anycode here ...
+	case "2":
+		c_task2()
+	case "3":
+		c_task3()
+	default:
+		c_task2()
+	}
+	fmt.Println(answers)
 }
 
 func addComponent() {
 	cmd.AddQuestion("component", "your component name: ", "Please input correct component name: ", "^[a-zA-Z]+")
+	answers := cmd.Exec()
+	option := cmd.AddTask("which kind of component do you want?", 6, " simple", " with store", " store with loadable")
+	switch option {
+	case "1":
+		a_task1()
+	//anycode here ...
+	case "2":
+		a_task2()
+	case "3":
+		a_task3()
+	default:
+		a_task2()
+	}
+	fmt.Println(answers)
 }
 
 func initProject() {
 	cmd.AddQuestion("project", "your project name: ", "Please input correct project name: ", "^[a-zA-Z]+")
+	answers := cmd.Exec()
+	fmt.Println(answers)
 }

@@ -2,7 +2,7 @@
 * @Author: scottxiong
 * @Date:   2019-12-26 22:35:32
 * @Last Modified by:   scottxiong
-* @Last Modified time: 2019-12-26 23:49:37
+* @Last Modified time: 2019-12-27 03:42:10
  */
 package engine
 
@@ -28,6 +28,10 @@ func handleArgs() {
 			initProject()
 		} else if os.Args[1] == "g" {
 			argsNotMatched("react g 【c/p】 ")
+		} else if os.Args[1] == "add" {
+			argsNotMatched("react add c ")
+		} else if os.Args[1] == "d" {
+			argsNotMatched("react d i ")
 		} else {
 			printUseage()
 		}
@@ -44,16 +48,20 @@ func handleArgs() {
 			} else {
 				argsNotMatched("react g 【c/p】 ")
 			}
-		} else {
-			invalidArgs("react g 【c/p】 ")
-		}
-
-		if os.Args[1] == "add" {
+		} else if os.Args[1] == "add" {
 			if os.Args[2] == "c" {
 				addComponent()
 			} else {
 				argsNotMatched("react add c")
 			}
+		} else if os.Args[1] == "d" {
+			if os.Args[2] == "i" {
+				dealWithIconfont()
+			} else {
+				argsNotMatched("react d i")
+			}
+		} else {
+			invalidArgs("react g 【c/p】 ")
 		}
 
 	}
@@ -61,10 +69,12 @@ func handleArgs() {
 }
 
 func printUseage() {
-	cl.BoldGreen.Printf("Full Commonds Are: \n")
-	cl.BoldCyan.Println("react 【i/init】")
-	cl.BoldCyan.Println("react g c")
-	cl.BoldCyan.Println("react g p")
+	cl.BoldRed.Printf("Command\tFunc\tType\tDesc\n")
+	cl.BoldCyan.Printf("react\ti/init\tnull\tinit react project\n")
+	cl.BoldCyan.Printf("react\tg\tc\tgenerator component\n")
+	cl.BoldCyan.Printf("react\tg\tp\tgenerator page\n")
+	cl.BoldCyan.Printf("react\tadd\tc\tpage's component\n")
+	cl.BoldCyan.Printf("react\td\ti\tdeal with iconfont\n")
 }
 func argsNotMatched(tip string) {
 	cl.BoldRed.Printf("arguments not matched, please use ")
