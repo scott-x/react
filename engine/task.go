@@ -1,13 +1,13 @@
 /*
 * @Author: scottxiong
 * @Date:   2019-12-26 22:49:46
-* @Last Modified by:   sottxiong
-* @Last Modified time: 2019-12-30 08:24:21
+* @Last Modified by:   scottxiong
+* @Last Modified time: 2019-12-30 15:22:50
  */
 package engine
 
 import (
-	"fmt"
+	_ "fmt"
 
 	"github.com/scott-x/gutils/cmd"
 )
@@ -27,7 +27,6 @@ func genPages() {
 	default:
 		p_task2(answers["page"])
 	}
-	fmt.Println(answers)
 }
 
 func genComponents() {

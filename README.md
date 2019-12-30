@@ -1,6 +1,7 @@
 # react
 
 ```
+go build && mv react $GOPATH/bin/react
 react init
 react g c common_component
 react g p page_name
