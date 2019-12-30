@@ -1,8 +1,8 @@
 /*
 * @Author: scottxiong
 * @Date:   2019-12-26 22:35:32
-* @Last Modified by:   scottxiong
-* @Last Modified time: 2019-12-27 03:42:10
+* @Last Modified by:   sottxiong
+* @Last Modified time: 2019-12-30 04:26:11
  */
 package engine
 
@@ -70,7 +70,7 @@ func handleArgs() {
 
 func printUseage() {
 	cl.BoldRed.Printf("Command\tFunc\tType\tDesc\n")
-	cl.BoldCyan.Printf("react\ti/init\tnull\tinit react project\n")
+	cl.BoldCyan.Printf("react\ti/init\t\tinit react project\n")
 	cl.BoldCyan.Printf("react\tg\tc\tgenerator component\n")
 	cl.BoldCyan.Printf("react\tg\tp\tgenerator page\n")
 	cl.BoldCyan.Printf("react\tadd\tc\tpage's component\n")
